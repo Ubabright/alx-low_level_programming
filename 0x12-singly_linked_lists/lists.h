@@ -1,3 +1,4 @@
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 #ifndef _LINKED_LIST
 #define _LINKED_LIST
 
