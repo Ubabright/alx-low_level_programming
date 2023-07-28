@@ -10,20 +10,21 @@
   */
 size_t print_list(const list_t *h)
 {
-	size_t total = 0;
+	int i;
 
-	while (h != NULL)
+	if (h == NULL) 
+	return (0);
+
+	for (i = 1; h->next != NULL; i++)
 	{
 		if (h->str == NULL)
-			printf("[0] (nil)\n");
+			printf("[%d] %s\n", h->len, "(nil)");
 		else
+		{
 			printf("[%d] %s\n", h->len, h->str);
-
+		}
 		h = h->next;
-		total++;
 	}
-
-
-
-	return (total);
+        printf("[%d] %s\n", h->len, "(nil)");
+	return (i);
 }
