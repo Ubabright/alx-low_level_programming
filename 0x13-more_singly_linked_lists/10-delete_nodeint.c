@@ -6,81 +6,32 @@
  * @index: The index to be removed - indices begins from 0.
  *
  * Return: if successful return - 1, else -1
- * 
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *temp, *toop = *head;
+	listint_t *temp, *copy = *head;
 	unsigned int node;
 
-	if (toop == 0)
+	if (copy == NULL)
 		return (-1);
 
 	if (index == 0)
 	{
 		*head = (*head)->next;
-		free(toop);
+		free(copy);
 		return (1);
 	}
 
 	for (node = 0; node < (index - 1); node++)
 	{
-		if (toop->next == 0)
+		if (copy->next == NULL)
 			return (-1);
 
-		toop = toop->next;
+		copy = copy->next;
 	}
 
-	temp = toop->next;
-	toop->next = temp->next;
+	temp = copy->next;
+	copy->next = temp->next;
 	free(temp);
 	return (1);
 }
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-"10-delete_nodeint.c" [New File]                                                    0,0-1         All
